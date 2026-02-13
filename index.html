@@ -8,34 +8,25 @@
   <link rel="manifest" href="manifest.json">
   <style>
     :root{
-      --bg1:#0a0b10;
-      --bg2:#0e1630;
+      --bg1:#0a0b10; --bg2:#0e1630;
       --glass:rgba(255,255,255,.10);
-      --glass2:rgba(255,255,255,.14);
-      --card:#ffffff;
-      --card2:rgba(255,255,255,.94);
-      --ink:#0f172a;
-      --muted:rgba(15,23,42,.62);
+      --card:#ffffff; --card2:rgba(255,255,255,.94);
+      --ink:#0f172a; --muted:rgba(15,23,42,.62);
       --line:rgba(15,23,42,.10);
       --shadow:0 18px 40px rgba(0,0,0,.20);
       --shadow2:0 10px 25px rgba(0,0,0,.14);
-      --r:26px;
-      --r2:18px;
+      --r:26px; --r2:18px;
 
-      --sky:#56B6FF;
-      --sky2:#2F8CFF;
-      --mint:#7CF0C8;
-      --pink:#FF7BB0;
-      --amber:#FFD27A;
-      --violet:#B692FF;
+      --sky:#56B6FF; --sky2:#2F8CFF;
+      --mint:#7CF0C8; --pink:#FF7BB0;
+      --amber:#FFD27A; --violet:#B692FF;
 
       --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
 
     *{box-sizing:border-box}
     body{
-      margin:0; font-family:var(--font);
-      min-height:100vh; color:#fff;
+      margin:0; font-family:var(--font); min-height:100vh; color:#fff;
       background:
         radial-gradient(900px 540px at 20% 20%, rgba(86,182,255,.22), transparent 60%),
         radial-gradient(800px 520px at 80% 30%, rgba(255,123,176,.18), transparent 55%),
@@ -55,11 +46,7 @@
       backdrop-filter: blur(14px);
     }
 
-    .app{
-      display:grid;
-      grid-template-columns: 92px 1fr;
-      gap:14px;
-    }
+    .app{ display:grid; grid-template-columns: 92px 1fr; gap:14px; }
 
     /* Sidebar */
     .sidebar{
@@ -114,8 +101,7 @@
       flex-wrap:wrap;
     }
     .search{
-      flex:1;
-      min-width:240px;
+      flex:1; min-width:240px;
       display:flex; gap:10px; align-items:center;
       background:rgba(255,255,255,.92);
       border:1px solid rgba(15,23,42,.10);
@@ -136,23 +122,14 @@
       background:rgba(255,255,255,.10);
       cursor:pointer; user-select:none;
       transition: transform .18s ease, background .18s ease;
+      white-space:nowrap;
     }
     .chip:hover{ transform:translateY(-2px); background:rgba(255,255,255,.14) }
     .dot{ width:9px;height:9px;border-radius:999px;background:var(--mint); box-shadow:0 0 0 4px rgba(124,240,200,.18); }
     .tiny{ font-size:12px; opacity:.92; }
 
-    .grid{
-      display:grid;
-      grid-template-columns: 1.35fr .85fr;
-      gap:12px;
-      align-items:stretch;
-    }
-    .bottom{
-      display:grid;
-      grid-template-columns: 1fr 1fr .95fr;
-      gap:12px;
-      align-items:stretch;
-    }
+    .grid{ display:grid; grid-template-columns: 1.35fr .85fr; gap:12px; align-items:stretch; }
+    .bottom{ display:grid; grid-template-columns: 1fr 1fr .95fr; gap:12px; align-items:stretch; }
 
     .card{
       background:var(--card2);
@@ -172,12 +149,7 @@
       border:1px solid rgba(15,23,42,.10);
       background:rgba(255,255,255,.70);
     }
-    .kpis{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:12px;
-      margin-top:12px;
-    }
+    .kpis{ display:grid; grid-template-columns: 1fr 1fr 1fr; gap:12px; margin-top:12px; }
     .kpi{
       background:rgba(15,23,42,.03);
       border:1px solid rgba(15,23,42,.08);
@@ -216,20 +188,12 @@
       border-color:rgba(47,140,255,.25);
       box-shadow:0 14px 26px rgba(47,140,255,.20);
     }
-    .btn.danger{
-      background:rgba(255,123,176,.12);
-      border-color:rgba(255,123,176,.20);
-    }
-    .btn.good{
-      background:rgba(124,240,200,.14);
-      border-color:rgba(124,240,200,.22);
-    }
+    .btn.danger{ background:rgba(255,123,176,.12); border-color:rgba(255,123,176,.20); }
+    .btn.good{ background:rgba(124,240,200,.14); border-color:rgba(124,240,200,.22); }
+    .btn.smallBtn{ padding:8px 10px; border-radius:12px; }
 
-    /* Tables/lists */
-    .listHeader{
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      margin-bottom:10px;
-    }
+    /* Lists */
+    .listHeader{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px; }
     .select{
       border:1px solid rgba(15,23,42,.10);
       background:rgba(15,23,42,.03);
@@ -253,7 +217,6 @@
       border-radius: 999px;
       border:2px solid rgba(255,255,255,.55);
     }
-
     .pitem{
       display:flex; gap:10px; align-items:center;
       padding:10px;
@@ -396,20 +359,8 @@
     }
 
     /* Attachments */
-    .attachments{
-      margin-top:10px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .attRow{
-      display:flex; gap:8px; flex-wrap:wrap; align-items:center;
-    }
-    .attList{
-      display:flex; flex-direction:column; gap:8px;
-      max-height: 140px; overflow:auto;
-      padding-right:4px;
-    }
+    .attachments{ margin-top:10px; display:flex; flex-direction:column; gap:10px; }
+    .attList{ display:flex; flex-direction:column; gap:8px; max-height: 140px; overflow:auto; padding-right:4px; }
     .attItem{
       display:flex; gap:10px; align-items:center;
       padding:10px;
@@ -421,12 +372,6 @@
     .attItem .muted{ font-size:12px; }
     .attItem .grow{ flex:1; min-width:0; }
     .attItem .grow div{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .smallBtn{
-      padding:8px 10px;
-      border-radius:12px;
-      font-weight:950;
-      font-size:12px;
-    }
     input[type="file"]{
       border:1px dashed rgba(15,23,42,.20);
       padding:10px;
@@ -447,7 +392,7 @@
       z-index: 9999;
     }
     .modal{
-      width: min(720px, 100%);
+      width: min(760px, 100%);
       background: rgba(255,255,255,.92);
       color: var(--ink);
       border: 1px solid rgba(15,23,42,.12);
@@ -482,8 +427,9 @@
     /* Print */
     @media print{
       body{ background:#fff !important; padding:0; }
-      .shell, .app, .sidebar, .topbar, .grid, .bottom, .chip, .btn, .select, input, textarea, .attRow, .navBtn{ display:none !important; }
+      .shell, .app, .sidebar, .topbar, .grid, .bottom{ display:none !important; }
       .printArea{ display:block !important; }
+
       .printArea{
         padding:18px;
         font-family: var(--font);
@@ -494,6 +440,19 @@
       .printArea .row{ display:flex; gap:10px; flex-wrap:wrap; }
       .printArea .row > div{ flex:1; min-width:220px; }
       .printArea .small{ color:#555; font-size:12px; }
+
+      /* Docs styling */
+      .printArea .docHead{ display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+      .printArea .docHead .box{ margin-top:0; }
+      .printArea .docTitle{ font-size:18px; font-weight:900; margin:0 0 6px 0; }
+      .printArea .docLine{ height:1px; background:#ddd; margin:10px 0; }
+      .printArea .signature{
+        margin-top: 18px;
+        padding-top: 12px;
+        border-top: 1px dashed #bbb;
+        text-align:center;
+      }
+      .printArea .stamp{ font-size:12px; color:#555; margin-top:6px; }
     }
 
     /* Responsive */
@@ -517,10 +476,10 @@
     <div class="app">
       <aside class="sidebar">
         <div class="brand">BTX</div>
-        <div class="sbtn active" data-tab="dash" title="Dashboard">🏠</div>
-        <div class="sbtn" data-tab="patients" title="Pacientes">👥</div>
-        <div class="sbtn" data-tab="agenda" title="Agenda">📅</div>
-        <div class="sbtn" data-tab="backup" title="Backup">🧠</div>
+        <div class="sbtn active" title="Dashboard">🏠</div>
+        <div class="sbtn" title="Pacientes">👥</div>
+        <div class="sbtn" title="Agenda">📅</div>
+        <div class="sbtn" title="Backup">🧠</div>
         <div class="spacer"></div>
         <div class="avatar" title="Perfil">OA</div>
       </aside>
@@ -541,17 +500,10 @@
             </div>
           </div>
 
-          <div class="chip" id="btnNewPatient">
-            <div style="font-weight:950;">➕ Paciente</div>
-          </div>
-
-          <div class="chip" id="btnNewAppt">
-            <div style="font-weight:950;">➕ Agendamento</div>
-          </div>
-
-          <div class="chip" id="btnPrint">
-            <div style="font-weight:950;">🖨️ Imprimir</div>
-          </div>
+          <div class="chip" id="btnNewPatient"><div style="font-weight:950;">➕ Paciente</div></div>
+          <div class="chip" id="btnNewAppt"><div style="font-weight:950;">➕ Agendamento</div></div>
+          <div class="chip" id="btnDocs"><div style="font-weight:950;">📄 Documentos</div></div>
+          <div class="chip" id="btnPrint"><div style="font-weight:950;">🖨️ Imprimir</div></div>
         </div>
 
         <section class="grid">
@@ -560,8 +512,8 @@
             <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;">
               <div>
                 <div class="muted">Bom dia 👋</div>
-                <h2 style="font-weight:950;">Dr. Orlando</h2>
-                <div class="muted">Sistema offline-first: pacientes, agenda, evolução e anexos (foto/PDF) com backup.</div>
+                <h2 style="font-weight:950;">BTX Dental • Consultório</h2>
+                <div class="muted">Pacientes, agenda, evolução, anexos e documentos (receita/atestado/orçamento/recibo) — tudo offline.</div>
               </div>
               <div class="pill">Hoje: <b id="todayLabel">—</b></div>
             </div>
@@ -682,6 +634,9 @@
               </select>
             </div>
             <div class="plist" id="apptList" style="max-height:340px;"></div>
+            <div class="muted" style="margin-top:10px;">
+              Dica: segure no agendamento (ou clique com botão direito no PC) pra mudar status rápido.
+            </div>
           </div>
 
           <!-- Backup -->
@@ -690,7 +645,7 @@
               <div>
                 <div class="muted">Backup</div>
                 <div style="font-weight:950;">Exportar / Importar</div>
-                <div class="muted">Isso te permite trocar de aparelho sem perder nada.</div>
+                <div class="muted">Troca de aparelho sem perder nada.</div>
               </div>
               <div class="pill">Offline-first</div>
             </div>
@@ -709,7 +664,6 @@
 
         <!-- Print area -->
         <div class="printArea" style="display:none;"></div>
-
       </main>
     </div>
   </div>
@@ -801,14 +755,79 @@
     </div>
   </div>
 
+  <!-- Modal: Documentos -->
+  <div class="overlay" id="modalDocs">
+    <div class="modal">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+        <h3>Documentos</h3>
+        <button class="btn" id="closeDocs">✖</button>
+      </div>
+
+      <div class="muted" style="margin-top:6px;">
+        Gera documentos com os dados do paciente selecionado. Depois é só imprimir ou “Salvar em PDF”.
+      </div>
+
+      <div class="gridForm" style="margin-top:10px;">
+        <div>
+          <div class="label">Tipo</div>
+          <select class="inp" id="docType">
+            <option value="receita">Receita</option>
+            <option value="atestado">Atestado</option>
+            <option value="orcamento">Orçamento</option>
+            <option value="recibo">Recibo</option>
+          </select>
+        </div>
+        <div>
+          <div class="label">Data</div>
+          <input class="inp" id="docDate" type="date" />
+        </div>
+      </div>
+
+      <div class="gridForm">
+        <div>
+          <div class="label">Profissional (nome)</div>
+          <input class="inp" id="proName" placeholder="Dr. Orlando Abreu" />
+        </div>
+        <div>
+          <div class="label">Registro (CRO/CRM)</div>
+          <input class="inp" id="proReg" placeholder="CRO-PA XXXXX" />
+        </div>
+        <div>
+          <div class="label">Telefone/Contato</div>
+          <input class="inp" id="proPhone" placeholder="(91) 99987-3835" />
+        </div>
+        <div>
+          <div class="label">Endereço</div>
+          <input class="inp" id="proAddr" placeholder="Abaetetuba - PA" />
+        </div>
+      </div>
+
+      <div class="gridForm one">
+        <div>
+          <div class="label">Conteúdo do documento</div>
+          <textarea id="docBody" style="min-height:160px;" placeholder="Digite o texto do documento..."></textarea>
+          <div class="muted" style="margin-top:8px;">
+            Dica: clique em “Modelo” e só ajuste na hora.
+          </div>
+        </div>
+      </div>
+
+      <div class="modalFooter">
+        <button class="btn" id="loadTemplate">⚡ Modelo</button>
+        <button class="btn primary" id="printDoc">🖨️ Imprimir / PDF</button>
+      </div>
+    </div>
+  </div>
+
 <script>
 /* =========================
-   BTX Dental • Offline-first
+   BTX Dental • Offline-first (COM documentos)
    - IndexedDB: pacientes, agendamentos, anexos
    - CRUD real
-   - Busca real
+   - Busca
    - Backup export/import
-   - Print (ficha + agenda do dia)
+   - Impressão ficha + agenda
+   - Documentos: Receita / Atestado / Orçamento / Recibo (print/PDF)
 ========================= */
 
 /* ---------- Utils ---------- */
@@ -821,11 +840,16 @@ const toBR = (iso)=> {
   return `${d}/${m}/${y}`;
 };
 const initials = (name)=>{
-  const parts=(name||"").trim().split(/\s+/).filter(Boolean);
+  const parts=(name||"").trim().split(/\\s+/).filter(Boolean);
   const a=parts[0]?.[0]||"P";
   const b=parts[1]?.[0]||parts[0]?.[1]||"X";
   return (a+b).toUpperCase();
 };
+function escapeHtml(str){
+  return (str||"").replace(/[&<>"']/g, (m)=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  }[m]));
+}
 function toast(msg){
   let t=$("#toast");
   if(!t){
@@ -855,7 +879,7 @@ const DB_VER=1;
 function openDB(){
   return new Promise((resolve, reject)=>{
     const req=indexedDB.open(DB_NAME, DB_VER);
-    req.onupgradeneeded=(e)=>{
+    req.onupgradeneeded=()=>{
       const db=req.result;
 
       if(!db.objectStoreNames.contains("patients")){
@@ -882,7 +906,6 @@ function openDB(){
     req.onerror=()=>reject(req.error);
   });
 }
-
 async function tx(store, mode="readonly"){
   const db=await openDB();
   return db.transaction(store, mode).objectStore(store);
@@ -928,7 +951,6 @@ async function clearStore(store){
   });
 }
 function uid(){
-  // id único simples e estável
   return "id_" + Math.random().toString(16).slice(2) + "_" + Date.now().toString(16);
 }
 
@@ -942,7 +964,7 @@ let state={
   online:true
 };
 
-/* ---------- Seed (primeira execução) ---------- */
+/* ---------- Seed ---------- */
 async function isFirstRun(){
   const m=await get("meta","seeded");
   return !m;
@@ -964,7 +986,7 @@ async function loadAll(){
   await seedIfNeeded();
   state.patients=await getAll("patients");
   state.appointments=await getAll("appointments");
-  $("#dbStatus").textContent = `Banco: ${state.patients.length} pacientes • ${state.appointments.length} agendamentos • (anexos: carregam sob demanda)`;
+  $("#dbStatus").textContent = `Banco: ${state.patients.length} pacientes • ${state.appointments.length} agendamentos • IndexedDB OK ✅`;
 }
 function sortPatients(list, mode){
   const a=[...list];
@@ -984,6 +1006,14 @@ function renderHeader(){
   const wd=["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"][now.getDay()];
   $("#todayLabel").textContent = ` ${wd}, ${now.toLocaleDateString("pt-BR")} `;
   $("#dayLabel").textContent = toBR(state.selectedDay);
+}
+function apptsForMonth(ym){
+  return state.appointments.filter(a => (a.date||"").startsWith(ym));
+}
+function apptsForDay(day){
+  return state.appointments
+    .filter(a => a.date===day)
+    .sort((x,y)=>(x.time||"").localeCompare(y.time||""));
 }
 
 function renderPatients(){
@@ -1031,15 +1061,6 @@ function renderPatients(){
   });
 }
 
-function apptsForMonth(ym){
-  return state.appointments.filter(a => (a.date||"").startsWith(ym));
-}
-function apptsForDay(day){
-  return state.appointments
-    .filter(a => a.date===day)
-    .sort((x,y)=>(x.time||"").localeCompare(y.time||""));
-}
-
 function renderAppts(){
   const list=$("#apptList");
   list.innerHTML="";
@@ -1049,7 +1070,6 @@ function renderAppts(){
   let arr=apptsForMonth(ym);
   if(filter!=="all") arr=arr.filter(a=>a.status===filter);
 
-  // busca global também
   const q=$("#searchInput").value.trim().toLowerCase();
   if(q){
     arr=arr.filter(a=>{
@@ -1087,7 +1107,7 @@ function renderAppts(){
         <p class="pname">${escapeHtml(p?.name||"Paciente removido")}</p>
         <p class="psub">${escapeHtml(a.proc||"—")}</p>
       </div>
-      <div class="tag ${a.status}">${a.status.toUpperCase()}</div>
+      <div class="tag ${a.status}">${(a.status||"").toUpperCase()}</div>
       <div class="ptime">${a.time||"—"}</div>
     `;
     el.addEventListener("click", ()=>{
@@ -1096,11 +1116,12 @@ function renderAppts(){
       renderDayAppts();
       $("#dayLabel").textContent=toBR(state.selectedDay);
       toast("Agendamento selecionado 📌");
+      renderCalendar();
+      renderKpis();
     });
 
-    // menu rápido
-    el.addEventListener("contextmenu", async (ev)=>{
-      ev.preventDefault();
+    // mudança rápida de status
+    const changeStatus = async ()=>{
       const next = prompt("Status: confirmado | pendente | falta | reagendado", a.status);
       if(!next) return;
       const ok=["confirmado","pendente","falta","reagendado"].includes(next);
@@ -1109,7 +1130,17 @@ function renderAppts(){
       await put("appointments", a);
       await refresh();
       toast("Status atualizado ✅");
-    });
+    };
+
+    el.addEventListener("contextmenu", (ev)=>{ ev.preventDefault(); changeStatus(); });
+
+    // mobile: toque longo
+    let pressTimer=null;
+    el.addEventListener("touchstart", ()=>{
+      pressTimer=setTimeout(()=>changeStatus(), 650);
+    }, {passive:true});
+    el.addEventListener("touchend", ()=>{ clearTimeout(pressTimer); }, {passive:true});
+    el.addEventListener("touchmove", ()=>{ clearTimeout(pressTimer); }, {passive:true});
 
     list.appendChild(el);
   });
@@ -1139,7 +1170,7 @@ function renderDayAppts(){
         <p class="pname">${escapeHtml(p?.name||"Paciente removido")}</p>
         <p class="psub">${escapeHtml(a.proc||"—")}</p>
       </div>
-      <div class="tag ${a.status}">${a.status.toUpperCase()}</div>
+      <div class="tag ${a.status}">${(a.status||"").toUpperCase()}</div>
       <div class="ptime">${a.time||"—"}</div>
     `;
     el.addEventListener("click", ()=>{ if(p?.id) selectPatient(p.id); });
@@ -1213,7 +1244,6 @@ function renderCalendar(){
     cal.appendChild(el);
   }
 
-  // completar grade
   const cells=cal.children.length;
   const needed=(7*7)-cells;
   for(let i=0;i<Math.max(0,needed);i++){
@@ -1310,11 +1340,9 @@ function renderKpis(){
   $("#kpiFaltas").textContent = faltas;
 }
 
-function escapeHtml(str){
-  return (str||"").replace(/[&<>"']/g, (m)=>({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
-  }[m]));
-}
+/* ---------- Modals ---------- */
+function openModal(sel){ $(sel).style.display="flex"; }
+function closeModal(sel){ $(sel).style.display="none"; }
 
 /* ---------- Actions ---------- */
 async function refresh(){
@@ -1334,13 +1362,10 @@ async function selectPatient(id){
   renderPatients();
   renderSelectedPatient();
   await renderAttachments();
-  // atualizar dropdown do agendamento (pra ficar esperto)
   await fillPatientSelect();
 }
 
-function openModal(id){ $(id).style.display="flex"; }
-function closeModal(id){ $(id).style.display="none"; }
-
+/* ---------- Patients CRUD ---------- */
 let editingPatientId=null;
 
 function resetPatientForm(){
@@ -1384,15 +1409,11 @@ async function deleteSelectedPatient(){
   const p=state.patients.find(x=>x.id===id);
   if(!confirm(`Excluir paciente "${p?.name||""}" e todos os seus anexos/agendamentos?`)) return;
 
-  // apagar anexos
   const files=await getAll("files");
-  const my=files.filter(f=>f.patientId===id);
-  for(const f of my) await del("files", f.id);
+  for(const f of files.filter(f=>f.patientId===id)) await del("files", f.id);
 
-  // apagar agendamentos
   const ap=await getAll("appointments");
-  const mine=ap.filter(a=>a.patientId===id);
-  for(const a of mine) await del("appointments", a.id);
+  for(const a of ap.filter(a=>a.patientId===id)) await del("appointments", a.id);
 
   await del("patients", id);
   state.selectedPatientId=null;
@@ -1412,16 +1433,14 @@ async function saveClinicalNotes(){
   await refresh();
 }
 
+/* ---------- Attachments ---------- */
 async function handleFileUpload(file){
   const pId=state.selectedPatientId;
   if(!pId) return toast("Selecione um paciente antes de anexar.");
   if(!file) return;
 
-  // limite básico pra evitar travar (ajuste depois se quiser)
   const MAX_MB = 12;
-  if(file.size > MAX_MB * 1024 * 1024){
-    return toast(`Arquivo grande demais (${MAX_MB}MB máx).`);
-  }
+  if(file.size > MAX_MB * 1024 * 1024) return toast(`Arquivo grande demais (${MAX_MB}MB máx).`);
 
   const record={
     id:uid(),
@@ -1437,6 +1456,7 @@ async function handleFileUpload(file){
   await renderAttachments();
 }
 
+/* ---------- Appointments ---------- */
 async function fillPatientSelect(){
   const sel=$("#aPatient");
   sel.innerHTML="";
@@ -1447,9 +1467,7 @@ async function fillPatientSelect(){
     op.textContent=p.name;
     sel.appendChild(op);
   });
-  if(state.selectedPatientId){
-    sel.value=state.selectedPatientId;
-  }
+  if(state.selectedPatientId) sel.value=state.selectedPatientId;
 }
 
 async function saveApptFromModal(){
@@ -1467,7 +1485,6 @@ async function saveApptFromModal(){
   const a={ id:uid(), patientId, date, time, status, proc, createdAt:Date.now() };
   await put("appointments", a);
 
-  // puxa pro dia selecionado, fica “na cara”
   state.selectedDay=date;
   state.calDate = new Date(date+"T00:00:00");
   toast("Agendamento criado ✅");
@@ -1475,6 +1492,7 @@ async function saveApptFromModal(){
   await refresh();
 }
 
+/* ---------- Print (Ficha + Agenda) ---------- */
 function buildPrintHTML(){
   const p=state.patients.find(x=>x.id===state.selectedPatientId);
   const day=state.selectedDay;
@@ -1482,7 +1500,7 @@ function buildPrintHTML(){
 
   const clinicInfo = `
     <div class="small">BTX Dental • Consultório Offline</div>
-    <div class="small">Dr. Orlando • Abaetetuba - PA</div>
+    <div class="small">Abaetetuba - PA</div>
   `;
 
   const patientBox = p ? `
@@ -1542,17 +1560,108 @@ function doPrint(){
   window.print();
 }
 
+/* ---------- Documentos ---------- */
+function templateFor(type){
+  const p = state.patients.find(x=>x.id===state.selectedPatientId);
+  const pname = p?.name || "Paciente";
+  const pphone = p?.phone || "—";
+  const dateBr = new Date().toLocaleDateString("pt-BR");
+
+  if(type==="receita"){
+    return `PACIENTE: ${pname}\nCONTATO: ${pphone}\nDATA: ${dateBr}\n\nPRESCRIÇÃO:\n1) ________________________________\n   Posologia: ______________________\n\n2) ________________________________\n   Posologia: ______________________\n\nORIENTAÇÕES:\n- ________________________________\n- ________________________________\n`;
+  }
+  if(type==="atestado"){
+    return `Atesto para os devidos fins que ${pname} esteve sob meus cuidados profissionais nesta data (${dateBr}), devendo permanecer afastado(a) de suas atividades por ____ dia(s), a contar de ____/____/____.\n\nCID (opcional): ________\nObservações: _____________________________\n`;
+  }
+  if(type==="orcamento"){
+    return `ORÇAMENTO ODONTOLÓGICO\nPaciente: ${pname}\nData: ${dateBr}\n\nItens/Procedimentos:\n1) ____________________________  R$ ________\n2) ____________________________  R$ ________\n3) ____________________________  R$ ________\n\nCondições:\n- Forma de pagamento: ____________________\n- Validade deste orçamento: ____ dias\n`;
+  }
+  if(type==="recibo"){
+    return `RECIBO\nRecebi de ${pname} a quantia de R$ ________ (________________________), referente a serviços odontológicos prestados.\n\nData: ${dateBr}\nForma de pagamento: ______________________\n`;
+  }
+  return "";
+}
+
+function openDocsModal(){
+  const p = state.patients.find(x=>x.id===state.selectedPatientId);
+  if(!p) return toast("Selecione um paciente.");
+
+  $("#docDate").value = todayISO();
+
+  // você edita isso uma vez e fica preenchendo depois
+  $("#proName").value = $("#proName").value || "Dr. Orlando Abreu";
+  $("#proReg").value  = $("#proReg").value  || "CRO-PA ______";
+  $("#proPhone").value= $("#proPhone").value|| "(91) 99987-3835";
+  $("#proAddr").value = $("#proAddr").value || "Abaetetuba - PA";
+
+  $("#docType").value = $("#docType").value || "receita";
+  $("#docBody").value = templateFor($("#docType").value);
+
+  openModal("#modalDocs");
+}
+
+function printDocumentFromModal(){
+  const p = state.patients.find(x=>x.id===state.selectedPatientId);
+  if(!p) return toast("Selecione um paciente.");
+
+  const type = $("#docType").value;
+  const date = $("#docDate").value || todayISO();
+  const dateBr = toBR(date);
+
+  const proName = $("#proName").value || "Profissional";
+  const proReg  = $("#proReg").value || "Registro";
+  const proPhone= $("#proPhone").value || "";
+  const proAddr = $("#proAddr").value || "";
+
+  const titleMap = { receita:"Receita", atestado:"Atestado", orcamento:"Orçamento", recibo:"Recibo" };
+  const body = $("#docBody").value || "";
+
+  const area = document.querySelector(".printArea");
+  area.innerHTML = `
+    <div>
+      <div class="docHead">
+        <div class="box" style="flex:1;">
+          <div class="docTitle">BTX Dental • ${titleMap[type] || "Documento"}</div>
+          <div class="small"><b>Data:</b> ${dateBr}</div>
+          <div class="small"><b>Paciente:</b> ${escapeHtml(p.name || "—")}</div>
+          <div class="small"><b>Telefone:</b> ${escapeHtml(p.phone || "—")}</div>
+        </div>
+        <div class="box" style="flex:1;">
+          <div class="small"><b>Profissional:</b> ${escapeHtml(proName)}</div>
+          <div class="small"><b>Registro:</b> ${escapeHtml(proReg)}</div>
+          <div class="small"><b>Contato:</b> ${escapeHtml(proPhone)}</div>
+          <div class="small"><b>Endereço:</b> ${escapeHtml(proAddr)}</div>
+        </div>
+      </div>
+
+      <div class="docLine"></div>
+
+      <div class="box">
+        <div style="white-space:pre-wrap; font-size:13px; line-height:1.5;">
+          ${escapeHtml(body)}
+        </div>
+      </div>
+
+      <div class="signature">
+        <div><b>${escapeHtml(proName)}</b></div>
+        <div class="stamp">${escapeHtml(proReg)} • ${escapeHtml(proPhone)}</div>
+      </div>
+    </div>
+  `;
+
+  window.print();
+}
+
 /* ---------- Backup export/import ---------- */
 function blobToBase64(blob){
   return new Promise((res,rej)=>{
     const r=new FileReader();
-    r.onload=()=>res(r.result); // data URL
+    r.onload=()=>res(r.result);
     r.onerror=()=>rej(r.error);
     r.readAsDataURL(blob);
   });
 }
 function base64ToBlob(dataUrl){
-  // data:[mime];base64,....
   const [meta,b64]=dataUrl.split(",");
   const mime=(meta.match(/data:(.*?);base64/)||[])[1] || "application/octet-stream";
   const bin=atob(b64);
@@ -1597,20 +1706,12 @@ async function importBackup(file){
   const txt=await file.text();
   let data=null;
   try{ data=JSON.parse(txt); }catch(e){ return toast("JSON inválido."); }
-
   if(!data || data.app!=="BTX Dental") return toast("Backup não reconhecido.");
-
   if(!confirm("Importar backup vai MESCLAR com o que já existe. Quer continuar?")) return;
 
-  // patients
-  for(const p of (data.patients||[])){
-    await put("patients", p);
-  }
-  // appointments
-  for(const a of (data.appointments||[])){
-    await put("appointments", a);
-  }
-  // files
+  for(const p of (data.patients||[])) await put("patients", p);
+  for(const a of (data.appointments||[])) await put("appointments", a);
+
   for(const f of (data.files||[])){
     const blob=base64ToBlob(f.dataUrl);
     await put("files", {id:f.id, patientId:f.patientId, name:f.name, type:f.type, size:f.size, createdAt:f.createdAt, blob});
@@ -1634,15 +1735,6 @@ async function wipeAll(){
 
 /* ---------- Events ---------- */
 function bindEvents(){
-  // Sidebar active UI only
-  $$(".sbtn").forEach(b=>{
-    b.addEventListener("click", ()=>{
-      $$(".sbtn").forEach(x=>x.classList.remove("active"));
-      b.classList.add("active");
-      toast("OK ✅");
-    });
-  });
-
   $("#searchInput").addEventListener("input", ()=>{
     renderPatients();
     renderAppts();
@@ -1654,15 +1746,11 @@ function bindEvents(){
 
   $("#prevMonth").addEventListener("click", ()=>{
     state.calDate=new Date(state.calDate.getFullYear(), state.calDate.getMonth()-1, 1);
-    renderCalendar();
-    renderAppts();
-    renderKpis();
+    renderCalendar(); renderAppts(); renderKpis();
   });
   $("#nextMonth").addEventListener("click", ()=>{
     state.calDate=new Date(state.calDate.getFullYear(), state.calDate.getMonth()+1, 1);
-    renderCalendar();
-    renderAppts();
-    renderKpis();
+    renderCalendar(); renderAppts(); renderKpis();
   });
 
   $("#btnNewPatient").addEventListener("click", ()=>{
@@ -1704,11 +1792,26 @@ function bindEvents(){
 
   $("#fileInput").addEventListener("change", async (e)=>{
     const file=e.target.files?.[0];
-    e.target.value=""; // permite anexar o mesmo arquivo depois
+    e.target.value="";
     await handleFileUpload(file);
   });
 
   $("#btnPrint").addEventListener("click", doPrint);
+
+  // Documentos
+  $("#btnDocs").addEventListener("click", ()=>{
+    if(!state.selectedPatientId) return toast("Selecione um paciente para gerar documentos.");
+    openDocsModal();
+  });
+  $("#closeDocs").addEventListener("click", ()=>closeModal("#modalDocs"));
+  $("#loadTemplate").addEventListener("click", ()=>{
+    $("#docBody").value = templateFor($("#docType").value);
+    toast("Modelo carregado ⚡");
+  });
+  $("#docType").addEventListener("change", ()=>{
+    $("#docBody").value = templateFor($("#docType").value);
+  });
+  $("#printDoc").addEventListener("click", printDocumentFromModal);
 
   $("#btnExport").addEventListener("click", exportBackup);
   $("#importInput").addEventListener("change", async (e)=>{
@@ -1725,7 +1828,6 @@ function bindEvents(){
     if(state.online){
       dot.style.background="var(--mint)";
       dot.style.boxShadow="0 0 0 4px rgba(124,240,200,.18)";
-      $(".chip .tiny").textContent="Clínica Online";
       toast("Clínica Online ✅");
     }else{
       dot.style.background="var(--amber)";
@@ -1735,8 +1837,11 @@ function bindEvents(){
   });
 
   // fechar modal clicando fora
-  $("#modalPatient").addEventListener("click", (e)=>{ if(e.target.id==="modalPatient") closeModal("#modalPatient"); });
-  $("#modalAppt").addEventListener("click", (e)=>{ if(e.target.id==="modalAppt") closeModal("#modalAppt"); });
+  ["modalPatient","modalAppt","modalDocs"].forEach(id=>{
+    $("#"+id).addEventListener("click", (e)=>{
+      if(e.target.id===id) closeModal("#"+id);
+    });
+  });
 
   // atalho salvar evolução
   document.addEventListener("keydown", (e)=>{
@@ -1753,24 +1858,15 @@ async function init(){
     await refresh();
     bindEvents();
 
-    // seleciona primeiro paciente automaticamente
     if(!state.selectedPatientId && state.patients[0]){
       await selectPatient(state.patients[0].id);
     }
 
-    // escolhe dia de hoje
     state.selectedDay = todayISO();
     state.calDate = new Date(state.selectedDay+"T00:00:00");
-    renderHeader();
-    renderCalendar();
-    renderDayAppts();
-    renderAppts();
-    renderKpis();
+    renderHeader(); renderCalendar(); renderDayAppts(); renderAppts(); renderKpis();
 
-    // status pwa/sw
-    $("#dbStatus").textContent = `Banco: ${state.patients.length} pacientes • ${state.appointments.length} agendamentos • IndexedDB OK ✅`;
-
-    // registrar service worker (PWA)
+    // SW para PWA/offline
     if("serviceWorker" in navigator){
       navigator.serviceWorker.register("sw.js").catch(()=>{});
     }
