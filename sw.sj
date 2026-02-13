@@ -2,7 +2,8 @@ const CACHE_NAME = "btx-dental-v1";
 const ASSETS = [
   "./",
   "./index.html",
-  "./manifest.json"
+  "./manifest.json",
+  "./sw.js"
 ];
 
 self.addEventListener("install", (event) => {
@@ -25,7 +26,6 @@ self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((cached) => {
       return cached || fetch(event.request).then((resp) => {
-        // cacheia o que for do mesmo origin
         const url = new URL(event.request.url);
         if (url.origin === location.origin) {
           const copy = resp.clone();
